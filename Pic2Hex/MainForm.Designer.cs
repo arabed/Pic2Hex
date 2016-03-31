@@ -36,7 +36,6 @@
             this.textHexCodeOutputBox = new System.Windows.Forms.TextBox();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.panelRightBottom = new System.Windows.Forms.Panel();
             this.buttonGenerateHexCode = new System.Windows.Forms.Button();
             this.panelRightTop = new System.Windows.Forms.Panel();
@@ -47,19 +46,21 @@
             this.numericUpDownContrast = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panelImageTop = new System.Windows.Forms.Panel();
-            this.panelImageBottom = new System.Windows.Forms.Panel();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            this.panelRight.SuspendLayout();
             this.panelRightBottom.SuspendLayout();
             this.panelRightTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownContrast)).BeginInit();
             this.panelImageTop.SuspendLayout();
-            this.panelImageBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLoad
@@ -86,9 +87,9 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(672, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(712, 154);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,9 +98,9 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(676, 170);
+            this.pictureBox2.Size = new System.Drawing.Size(712, 172);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -115,7 +116,7 @@
             this.textHexCodeOutputBox.Multiline = true;
             this.textHexCodeOutputBox.Name = "textHexCodeOutputBox";
             this.textHexCodeOutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textHexCodeOutputBox.Size = new System.Drawing.Size(676, 164);
+            this.textHexCodeOutputBox.Size = new System.Drawing.Size(714, 164);
             this.textHexCodeOutputBox.TabIndex = 4;
             // 
             // panelTop
@@ -126,52 +127,41 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(800, 32);
+            this.panelTop.Size = new System.Drawing.Size(840, 32);
             this.panelTop.TabIndex = 7;
             // 
             // panelBottom
             // 
             this.panelBottom.Controls.Add(this.textHexCodeOutputBox);
+            this.panelBottom.Controls.Add(this.panelRightBottom);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 376);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Padding = new System.Windows.Forms.Padding(5);
-            this.panelBottom.Size = new System.Drawing.Size(686, 174);
+            this.panelBottom.Size = new System.Drawing.Size(840, 174);
             this.panelBottom.TabIndex = 8;
-            // 
-            // panelRight
-            // 
-            this.panelRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelRight.Controls.Add(this.panelRightBottom);
-            this.panelRight.Controls.Add(this.panelRightTop);
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(686, 32);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Padding = new System.Windows.Forms.Padding(5);
-            this.panelRight.Size = new System.Drawing.Size(114, 518);
-            this.panelRight.TabIndex = 9;
             // 
             // panelRightBottom
             // 
             this.panelRightBottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelRightBottom.Controls.Add(this.buttonGenerateHexCode);
-            this.panelRightBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRightBottom.Location = new System.Drawing.Point(5, 162);
+            this.panelRightBottom.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRightBottom.Location = new System.Drawing.Point(719, 5);
             this.panelRightBottom.Name = "panelRightBottom";
             this.panelRightBottom.Padding = new System.Windows.Forms.Padding(5);
-            this.panelRightBottom.Size = new System.Drawing.Size(100, 347);
+            this.panelRightBottom.Size = new System.Drawing.Size(116, 164);
             this.panelRightBottom.TabIndex = 13;
             // 
             // buttonGenerateHexCode
             // 
             this.buttonGenerateHexCode.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonGenerateHexCode.Location = new System.Drawing.Point(5, 298);
+            this.buttonGenerateHexCode.Location = new System.Drawing.Point(5, 98);
             this.buttonGenerateHexCode.Margin = new System.Windows.Forms.Padding(5);
             this.buttonGenerateHexCode.Name = "buttonGenerateHexCode";
             this.buttonGenerateHexCode.Padding = new System.Windows.Forms.Padding(5);
-            this.buttonGenerateHexCode.Size = new System.Drawing.Size(86, 40);
+            this.buttonGenerateHexCode.Size = new System.Drawing.Size(102, 57);
             this.buttonGenerateHexCode.TabIndex = 7;
-            this.buttonGenerateHexCode.Text = "hex code";
+            this.buttonGenerateHexCode.Text = "generate the C code";
             this.buttonGenerateHexCode.UseVisualStyleBackColor = true;
             this.buttonGenerateHexCode.Click += new System.EventHandler(this.buttonGenerateHexCode_Click);
             // 
@@ -184,11 +174,11 @@
             this.panelRightTop.Controls.Add(this.label3);
             this.panelRightTop.Controls.Add(this.numericUpDownContrast);
             this.panelRightTop.Controls.Add(this.label2);
-            this.panelRightTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRightTop.Location = new System.Drawing.Point(5, 5);
+            this.panelRightTop.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRightTop.Location = new System.Drawing.Point(717, 5);
             this.panelRightTop.Name = "panelRightTop";
             this.panelRightTop.Padding = new System.Windows.Forms.Padding(5);
-            this.panelRightTop.Size = new System.Drawing.Size(100, 157);
+            this.panelRightTop.Size = new System.Drawing.Size(114, 330);
             this.panelRightTop.TabIndex = 12;
             // 
             // numericUpDownY
@@ -207,7 +197,7 @@
             0,
             0});
             this.numericUpDownY.Name = "numericUpDownY";
-            this.numericUpDownY.Size = new System.Drawing.Size(86, 20);
+            this.numericUpDownY.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownY.TabIndex = 17;
             this.numericUpDownY.Value = new decimal(new int[] {
             5,
@@ -242,7 +232,7 @@
             0,
             0});
             this.numericUpDownX.Name = "numericUpDownX";
-            this.numericUpDownX.Size = new System.Drawing.Size(86, 20);
+            this.numericUpDownX.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownX.TabIndex = 13;
             this.numericUpDownX.Value = new decimal(new int[] {
             5,
@@ -278,7 +268,7 @@
             0,
             0});
             this.numericUpDownContrast.Name = "numericUpDownContrast";
-            this.numericUpDownContrast.Size = new System.Drawing.Size(86, 20);
+            this.numericUpDownContrast.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownContrast.TabIndex = 12;
             this.numericUpDownContrast.Value = new decimal(new int[] {
             5,
@@ -300,33 +290,40 @@
             // panelImageTop
             // 
             this.panelImageTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelImageTop.Controls.Add(this.pictureBox1);
-            this.panelImageTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelImageTop.Controls.Add(this.splitContainer);
+            this.panelImageTop.Controls.Add(this.panelRightTop);
+            this.panelImageTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImageTop.Location = new System.Drawing.Point(0, 32);
             this.panelImageTop.Name = "panelImageTop";
             this.panelImageTop.Padding = new System.Windows.Forms.Padding(5);
-            this.panelImageTop.Size = new System.Drawing.Size(686, 164);
+            this.panelImageTop.Size = new System.Drawing.Size(840, 344);
             this.panelImageTop.TabIndex = 10;
             // 
-            // panelImageBottom
+            // splitContainer
             // 
-            this.panelImageBottom.Controls.Add(this.pictureBox2);
-            this.panelImageBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelImageBottom.Location = new System.Drawing.Point(0, 196);
-            this.panelImageBottom.Name = "panelImageBottom";
-            this.panelImageBottom.Padding = new System.Windows.Forms.Padding(5);
-            this.panelImageBottom.Size = new System.Drawing.Size(686, 180);
-            this.panelImageBottom.TabIndex = 11;
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(5, 5);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(this.pictureBox1);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.pictureBox2);
+            this.splitContainer.Size = new System.Drawing.Size(712, 330);
+            this.splitContainer.SplitterDistance = 154;
+            this.splitContainer.TabIndex = 18;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 550);
-            this.Controls.Add(this.panelImageBottom);
-            this.Controls.Add(this.panelBottom);
+            this.ClientSize = new System.Drawing.Size(840, 550);
             this.Controls.Add(this.panelImageTop);
-            this.Controls.Add(this.panelRight);
+            this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
             this.Name = "MainForm";
             this.Text = "Pic2Hex ver.0.1";
@@ -336,7 +333,6 @@
             this.panelTop.PerformLayout();
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
-            this.panelRight.ResumeLayout(false);
             this.panelRightBottom.ResumeLayout(false);
             this.panelRightTop.ResumeLayout(false);
             this.panelRightTop.PerformLayout();
@@ -344,7 +340,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownContrast)).EndInit();
             this.panelImageTop.ResumeLayout(false);
-            this.panelImageBottom.ResumeLayout(false);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,9 +358,7 @@
         private System.Windows.Forms.TextBox textHexCodeOutputBox;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBottom;
-        private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Panel panelImageTop;
-        private System.Windows.Forms.Panel panelImageBottom;
         private System.Windows.Forms.Panel panelRightBottom;
         private System.Windows.Forms.Button buttonGenerateHexCode;
         private System.Windows.Forms.Panel panelRightTop;
@@ -371,6 +368,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownContrast;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.SplitContainer splitContainer;
     }
 }
 
